@@ -8,7 +8,7 @@ class Portfolio extends Component {
     return (
       <div className="Portfolio">
       <StockForm/>
-        <p>{this.props.targetStock}</p>
+        <p>{this.props.stock}</p>
       </div>
     );
   }
@@ -19,7 +19,7 @@ function mapDispatchToProps(dispatch){
 }
 
 const mapStateToProps = (state) => {
-  return { targetStock: state.stocks.targetStock };
+  return { stock: state.stocks.stock };
 };
  
 export default connect(mapStateToProps, mapDispatchToProps) (Portfolio);

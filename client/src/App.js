@@ -13,7 +13,11 @@ import {
   NavLink
 } from 'react-router-dom'
 import { connect } from 'react-redux';
+import { fetchUser } from './actions/fetchUser'
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchUser()
+}
   render() {
     let portfolio = ""
     if (this.props.currentUser){
@@ -33,9 +37,13 @@ class App extends Component {
     );
   }
 }
+
+function mapDispatchToProps(dispatch){
+  return { fetchUser: () => dispatch(fetchUser()) }
+}
 const mapStateToProps = (state) => {
   return { currentUser: state.users.currentUser };
 };
  
-export default connect(mapStateToProps) (App);
+export default connect(mapStateToProps, mapDispatchToProps) (App);
 
