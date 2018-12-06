@@ -10,17 +10,18 @@ const rootReducer = combineReducers({
 export default rootReducer;
 
 
-function usersReducer(state = {loading: false, currentUser: null, stocks: []}, action) {
+function usersReducer(state = {loading: false, currentUser: null, userId: null, stocks: []}, action) {
   switch (action.type) {
     case 'LOADING_USER':
       return {...state, loading: true}
     case 'FETCH_USER':
+      debugger
       return { ...state,
-        currentUser: action.user.name
+        currentUser: action.user.name, userId: action.user.id
       }
     case 'SET_USER':
       return { ...state,
-        currentUser: action.user.currentUser.user.name
+        currentUser: action.user.currentUser.user.name, userId: action.user.currentUser.user.id
       }
     default:
       return state
