@@ -8,6 +8,7 @@ import {
   Redirect,
   NavLink
 } from 'react-router-dom'
+
 const LoginLink = () => 		 
 		    <NavLink
 		      to='/login'
@@ -33,10 +34,11 @@ const LogoutLink = () =>
 		      }}
 		    >Logout</NavLink>;			
 class Navbar extends Component {
-
+	state = { user: "Nate" };
   render() {
     return (
     	<>
+    		<h1>Welcome!</h1>
 		    <Route path="/user" component={LogoutLink} />
 		    <Route exact path="/" component={SignupLink} />
 		    <Route exact path="/" component={LoginLink} />

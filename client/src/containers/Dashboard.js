@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import Signup from './Signup'
 import {
   BrowserRouter as Router,
   Route,
