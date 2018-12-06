@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchStocks } from '../actions/fetchStocks'
+import StockForm  from './StockForm'
 class Portfolio extends Component {
-  handleOnClick = () => {
-    this.props.fetchStocks('appl')
-  }
+
   render() {
     return (
       <div className="Portfolio">
-      <button onClick={this.handleOnClick} />
-        <p>{this.props.stocks}</p>
+      <StockForm/>
+        <p>{this.props.targetStock}</p>
       </div>
     );
   }
@@ -20,7 +19,7 @@ function mapDispatchToProps(dispatch){
 }
 
 const mapStateToProps = (state) => {
-  return { stocks: state.stocks.stocks };
+  return { targetStock: state.stocks.targetStock };
 };
  
 export default connect(mapStateToProps, mapDispatchToProps) (Portfolio);

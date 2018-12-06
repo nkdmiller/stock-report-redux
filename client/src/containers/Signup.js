@@ -21,7 +21,6 @@ class Signup extends Component {
   onHandleSubmit = event => {
     event.preventDefault();
     let user = this.state
-    debugger
       fetch('/signup', {
         method: 'POST',
         headers: {

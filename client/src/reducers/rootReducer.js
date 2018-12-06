@@ -15,7 +15,7 @@ function usersReducer(state = {loading: false, currentUser: null, stocks: []}, a
     case 'FIND_CURRENT_USER':
       return {loading: true, user: null}
     case 'SET_USER':
-      debugger
+
       return { ...state,
         currentUser: action.user.currentUser.user.name
       }
@@ -24,13 +24,14 @@ function usersReducer(state = {loading: false, currentUser: null, stocks: []}, a
   }
 }
 
-function stocksReducer(state = {loading: false, currentUser: null, stocks: []}, action) {
+function stocksReducer(state = {loading: false, currentUser: null, stock: "", stockList: [], targetStock: ""}, action) {
   switch (action.type) {
     case 'LOADING_STOCKS':
       return {...state, loading: true}
     case 'ADD_STOCKS':
-    debugger
-      return {...state, loading: false, stocks: action.stocks.quote.symbol}
+      return {...state, loading: false, stock: action.sym}
+    case 'ADD_USER_STOCKS':
+      return {...state, loading: false, targetStock: action.stocks.quote.symbol}
     default:
       return state
     }
