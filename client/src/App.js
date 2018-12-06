@@ -12,15 +12,20 @@ import {
   Redirect,
   NavLink
 } from 'react-router-dom'
+import { connect } from 'react-redux';
 class App extends Component {
   render() {
+    let portfolio = ""
+    if (this.props.currentUser){
+      portfolio = <Portfolio/>
+    }
     return (
       <div className="App">
         <Router>
           <React.Fragment>
             <Navbar/>
             <Dashboard/>
-            <Portfolio/>
+            {portfolio}
           </React.Fragment>
         </Router>
       </div>
@@ -28,5 +33,9 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return { currentUser: state.users.currentUser };
+};
+ 
+export default connect(mapStateToProps) (App);
 
-export default App;
