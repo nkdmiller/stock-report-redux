@@ -1,7 +1,8 @@
 import {combineReducers} from "redux";
 
 const rootReducer = combineReducers({
-  users: usersReducer
+  users: usersReducer,
+  stocks: stocksReducer
 });
 
 //Through combineReducer, we're telling Redux to produce a reducer which will return a state that has both a key of books with a value equal to the return value of the booksReducer() and a key of authors with a value equal to the return value of the authorsReducer()
@@ -21,4 +22,16 @@ function usersReducer(state = {loading: false, currentUser: null, stocks: []}, a
     default:
       return state
   }
+}
+
+function stocksReducer(state = {loading: false, currentUser: null, stocks: []}, action) {
+  switch (action.type) {
+    case 'LOADING_STOCKS':
+      return {...state, loading: true}
+    case 'ADD_STOCKS':
+    debugger
+      return {...state, loading: false, stocks: action.stocks.quote.symbol}
+    default:
+      return state
+    }
 }
