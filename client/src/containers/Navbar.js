@@ -8,39 +8,39 @@ import {
   Redirect,
   NavLink
 } from 'react-router-dom'
-
-class Navbar extends Component {
-
-  render() {
-    return (
-
-    	<>
-		    <NavLink
-		      to="/"
-		      /* set exact so it knows to only set activeStyle when route is deeply equal to link */
-		      exact
-		      /* add prop for activeStyle */
-		      activeStyle={{
-		        background: 'darkblue'
-		      }}
-		    >Home</NavLink>
-
-		    <NavLink
-		      to='/signup'
-		      exact
-		      activeStyle={{
-		        background: 'darkblue'
-		      }}
-		    >Signup</NavLink>
-		 
+const LoginLink = () => 		 
 		    <NavLink
 		      to='/login'
 		      exact
 		      activeStyle={{
 		        background: 'darkblue'
 		      }}
-		    >Login</NavLink>
-		 </>
+		    >Login</NavLink>;
+const SignupLink = () =>
+		    <NavLink
+		      to='/signup'
+		      exact
+		      activeStyle={{
+		        background: 'darkblue'
+		      }}
+		    >Signup</NavLink>;
+const LogoutLink = () =>
+		    <NavLink
+		      to='/'
+		      exact
+		      activeStyle={{
+		        background: 'darkblue'
+		      }}
+		    >Logout</NavLink>;			
+class Navbar extends Component {
+
+  render() {
+    return (
+    	<>
+		    <Route path="/user" component={LogoutLink} />
+		    <Route exact path="/" component={SignupLink} />
+		    <Route exact path="/" component={LoginLink} />
+		</>
 
     );
   }
