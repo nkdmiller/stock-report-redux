@@ -4,16 +4,16 @@ import { connect } from 'react-redux';
 class Signup extends Component {
   state = {
     user: {
-      name: ''
+      name: '',
+      password: '',
+      email: ''
     }
   }
 
   onHandleChange = event => {
     
     this.setState({
-      user:{
-        name: event.target.value
-      }
+        user: {...this.state.user, [event.target.name]: event.target.value}
     });
 
   };
@@ -21,6 +21,7 @@ class Signup extends Component {
   onHandleSubmit = event => {
     event.preventDefault();
     let user = this.state
+    debugger
       fetch('/signup', {
         method: 'POST',
         headers: {
@@ -30,10 +31,12 @@ class Signup extends Component {
       })
     this.setState({
       user: {
-        name: ''
+        name: '',
+        password: '',
+        email: ''
       }
     })
-      document.getElementById("signup-response").innerHTML = `Signed up, ${user.name}!`
+      document.getElementById("signup-response").innerHTML = `Signed up, ${user.user.name}!`
     }
 
   handleKeyPress = (event) => {
@@ -49,6 +52,8 @@ class Signup extends Component {
         <div className="signup-form-body">
           <form onSubmit={this.onHandleSubmit} onKeyPress={this.handleKeyPress}>
             <input id="name" name="name" placeholder="Username" value={this.state.user.name} onChange={this.onHandleChange} />
+            <input id="password" name="password" placeholder="Password" value={this.state.user.password} onChange={this.onHandleChange} />
+            <input id="email" name="email" placeholder="Email" value={this.state.user.email} onChange={this.onHandleChange} />
             <button>Submit</button>
           </form>
         </div>
