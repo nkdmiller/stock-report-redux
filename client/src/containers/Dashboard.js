@@ -9,7 +9,6 @@ import {
   NavLink
 } from 'react-router-dom'
 const noUser = () => <h1>Please login or signup to use stock report!</h1>;
-const Signup = () => <h1>Signup!</h1>;
 const Login = () =>
   <form>
     <h1>Login</h1>
