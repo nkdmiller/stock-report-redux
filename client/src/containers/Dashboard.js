@@ -8,6 +8,7 @@ import {
   Redirect,
   NavLink
 } from 'react-router-dom'
+import { connect } from 'react-redux';
 const noUser = () => <h1>Please login or signup to use stock report!</h1>;
 const Login = () =>
   <form>
@@ -25,14 +26,21 @@ const Login = () =>
 
 class Dashboard extends Component {
   render() {
+  	let warning = <Route exact path="/" component={noUser} />;
+  	if (this.props.currentUser){
+  		warning = ""
+  	}
     return (
     		<React.Fragment>
 		      <Route exact path="/login" component={Login} />
-		      <Route exact path="/" component={noUser} />
+		      {warning}
 		      <Route exact path="/signup" component={Signup} />
 		    </React.Fragment>
     );
   }
 }
-
-export default Dashboard;
+const mapStateToProps = (state) => {
+  return { currentUser: state.users.currentUser };
+};
+ 
+export default connect(mapStateToProps) (Dashboard);
