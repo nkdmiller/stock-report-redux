@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	skip_before_action :verify_authenticity_token
   def create
     @user = User.create(user_params)
+    log_in(@user)
     render json: @user
   end
   private

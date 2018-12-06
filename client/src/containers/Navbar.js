@@ -8,37 +8,36 @@ import {
   Redirect,
   NavLink
 } from 'react-router-dom'
-
+import { connect } from 'react-redux';
 const LoginLink = () => 		 
 		    <NavLink
 		      to='/login'
 		      exact
-		      activeStyle={{
-		        background: 'darkblue'
-		      }}
 		    >Login</NavLink>;
 const SignupLink = () =>
 		    <NavLink
 		      to='/signup'
 		      exact
-		      activeStyle={{
-		        background: 'darkblue'
-		      }}
+
 		    >Signup</NavLink>;
 const LogoutLink = () =>
 		    <NavLink
 		      to='/'
 		      exact
-		      activeStyle={{
-		        background: 'darkblue'
-		      }}
-		    >Logout</NavLink>;			
+
+		    >Logout</NavLink>;
+const HomeLink = () =>
+		    <NavLink
+		      to='/'
+		      exact
+		    >Home</NavLink>;		
 class Navbar extends Component {
 	state = { user: "Nate" };
   render() {
     return (
     	<>
-    		<h1>Welcome!</h1>
+    		<h1>Welcome {this.props.currentUser}!</h1>
+    		<HomeLink/>
 		    <Route path="/user" component={LogoutLink} />
 		    <Route exact path="/" component={SignupLink} />
 		    <Route exact path="/" component={LoginLink} />
@@ -47,5 +46,8 @@ class Navbar extends Component {
     );
   }
 }
-
-export default Navbar;
+const mapStateToProps = (state) => {
+  return { currentUser: state.currentUser };
+};
+ 
+export default connect(mapStateToProps) (Navbar);

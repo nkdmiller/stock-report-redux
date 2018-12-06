@@ -29,6 +29,7 @@ class Signup extends Component {
           'Content-Type': 'application/json',
         }, body: JSON.stringify(user)
       })
+    this.props.setUser({currentUser: user})
     this.setState({
       user: {
         name: '',
@@ -63,4 +64,9 @@ class Signup extends Component {
     )
   }
 }
-export default connect()(Signup)
+
+const mapDispatchToProps = dispatch => ({
+  setUser: user => dispatch({type: 'SET_USER', user}),
+})
+
+export default connect(null, mapDispatchToProps)(Signup)
