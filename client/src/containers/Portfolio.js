@@ -4,6 +4,7 @@ import { fetchStocks } from '../actions/fetchStocks'
 import { addUserStock } from '../actions/addUserStock'
 import { createStock } from '../actions/createStock'
 import StockForm  from './StockForm'
+import StockList  from './StockList'
 class Portfolio extends Component {
 
 onHandleClickk = event =>{
@@ -15,6 +16,7 @@ onHandleClickk = event =>{
       <StockForm/>
         <p>{this.props.stock.symbol}</p>
         <button onClick={this.onHandleClickk} value={this.props.stock.symbol}>Add Stock to Portfolio</button>
+      <StockList/>
       </div>
     );
   }

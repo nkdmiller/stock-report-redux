@@ -4,7 +4,7 @@ import Stock from '../components/Stock'
  
 class StockList extends Component {
  
-  renderStocks= () => this.props.stockList.map((stock) => <Todo stock={stock} />)
+  renderStocks= () => this.props.stockList.map((stock, id) => <Stock key = {id} stock={stock} />)
 
   render() {
     return(
