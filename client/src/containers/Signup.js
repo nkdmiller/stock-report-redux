@@ -36,8 +36,9 @@ class Signup extends Component {
         email: ''
       }
     })
-      document.getElementById("signup-response").innerHTML = `Signed up, ${user.user.name}!`
+      document.getElementById("signup-response").innerHTML = `You're all set, ${user.user.name}!`
       document.getElementById("signup-form").style.display = "none"
+      document.getElementById("signup-head").style.display = "none"
     }
   handleKeyPress = (event) => {
     if (event.key === 'Enter'){
@@ -48,11 +49,11 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h1 id="signup-head">Sign Up</h1>
         <div className="signup-form-body">
           <form onSubmit={this.onHandleSubmit} onKeyPress={this.handleKeyPress} id="signup-form">
             <input id="name" name="name" placeholder="Username" value={this.state.user.name} onChange={this.onHandleChange} />
-            <input id="password" name="password" placeholder="Password" value={this.state.user.password} onChange={this.onHandleChange} />
+            <input id="password" type="password" name="password" placeholder="Password" value={this.state.user.password} onChange={this.onHandleChange} />
             <input id="email" name="email" placeholder="Email" value={this.state.user.email} onChange={this.onHandleChange} />
             <button>Submit</button>
           </form>

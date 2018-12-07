@@ -12,7 +12,7 @@ const SignupLink = props => {
 		      to='/signup'
 		      exact
 		      className = "link"
-		    >Login</NavLink>
+		    >Signup</NavLink>
 		   )
 }
 export default SignupLink;
