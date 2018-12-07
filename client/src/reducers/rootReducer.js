@@ -23,6 +23,9 @@ function usersReducer(state = {loading: false, currentUser: null, userId: null, 
       return { ...state,
         currentUser: action.user.currentUser.user.name, userId: action.user.currentUser.user.id
       }
+    case "ADD_USER_STOCK":
+      debugger
+      return state
     default:
       return state
   }
