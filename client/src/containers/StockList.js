@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Stock from '../components/Stock'
+import '../Styling.css'
  
 class StockList extends Component {
  
@@ -8,7 +9,7 @@ class StockList extends Component {
 
   render() {
     return(
-      <table>
+      <table class = "stock-table">
       	<th>
       	<td>Company</td>
       	<td>Symbol</td>
