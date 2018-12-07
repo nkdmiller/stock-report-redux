@@ -4,13 +4,12 @@ import Stock from '../components/Stock'
  
 class StockList extends Component {
  
-  renderTodos = () => this.props.todos.map((todo, id) => <Todo key={id} text={todo} />)
- 	renderHeader = () => console.log('hi')
- 	renderEnd = () => console.log('hi')
+  renderStocks= () => this.props.stockList.map((stock) => <Todo stock={stock} />)
+
   render() {
     return(
       <div>
-        {this.renderHeader()}
+        {this.renderStocks()}
       </div>
     );
   }
