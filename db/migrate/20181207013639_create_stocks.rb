@@ -4,7 +4,7 @@ class CreateStocks < ActiveRecord::Migration[5.2]
       t.string :symbol
       t.float :price
       t.float :change
-      t.string :company_name
+      t.string :companyName
       t.string :sector
 
       t.timestamps

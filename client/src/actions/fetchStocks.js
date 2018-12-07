@@ -3,6 +3,6 @@ export function fetchStocks() {
     dispatch({ type: 'LOADING_STOCKS' });
     return fetch("https://api.iextrading.com/1.0/stock/"+getState().stocks.targetStock+"/book")
       .then(response => response.json())
-      .then(stocks => dispatch({ type: 'ADD_USER_STOCKS', stocks }));
+      .then(stocks => dispatch({ type: 'ADD_STOCK_INFO', stocks }));
   };
 }
