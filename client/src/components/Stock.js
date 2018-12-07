@@ -1,9 +1,12 @@
-import React from 'react'
- 
+import React, { Component } from 'react';
 const Stock = props => {
-	debugger
+	let renderHead = ""
+	let renderEnd = ""
+
   return (
-    <li>{props.stock.symbol}</li>
+
+    <>{props.stock.symbol}</>
+
   );
 };
  
