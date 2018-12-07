@@ -9,6 +9,6 @@ export function createStock() {
 	    }, body: JSON.stringify(getState().stocks)
 	  }) 
 	  .then(response => response.json())
-      .then(stock => dispatch({ type: 'CREATE_STOCK', stock}));
+      .then(stock => dispatch({ type: 'CREATE_USER_STOCK', stock}));
 }
 }

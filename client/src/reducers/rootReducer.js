@@ -10,27 +10,32 @@ const rootReducer = combineReducers({
 export default rootReducer;
 
 
-function usersReducer(state = {loading: false, currentUser: null, userId: null, stocks: []}, action) {
+function usersReducer(state = {loading: false, currentUser: null, userId: null, stockList: []}, action) {
   switch (action.type) {
     case 'LOADING_USER':
       return {...state, loading: true}
     case 'FETCH_USER':
+
       return { ...state,
-        currentUser: action.user.name, userId: action.user.id
+        currentUser: action.user.name, userId: action.user.id, stockList: action.user.stocks
       }
     case 'SET_USER':
       return { ...state,
         currentUser: action.user.currentUser.user.name, userId: action.user.currentUser.user.id
       }
-    case "ADD_USER_STOCK":
-     
-      return state
+    case 'CREATE_USER_STOCK':
+
+      let newUserStock = { symbol: action.stock.symbol, id: action.stock.id, price: action.stock.price, change: action.stock.change, companyName: action.stock.companyName, sector: action.stock.sector};
+      return {
+        ...state,
+        stockList: [ ...state.stockList, newUserStock]
+      }
     default:
       return state
   }
 }
 
-function stocksReducer(state = {loading: false, currentUser: null, stock: "", stockList: [], targetStock: ""}, action) {
+function stocksReducer(state = {loading: false, currentUser: null, stock: "", targetStock: ""}, action) {
   switch (action.type) {
     case 'LOADING_STOCKS':
       return {...state, loading: true}
@@ -40,13 +45,6 @@ function stocksReducer(state = {loading: false, currentUser: null, stock: "", st
        
       let newStock = { symbol: action.stocks.quote.symbol, price: action.stocks.quote.latestPrice, change: action.stocks.quote.change, companyName: action.stocks.quote.companyName, sector: action.stocks.quote.sector}
       return {...state, loading: false, stock: newStock}
-    case 'CREATE_STOCK':
-      debugger
-      let newUserStock = { symbol: action.stock.symbol, id: action.stock.id, price: action.stock.price, change: action.stock.change, companyName: action.stock.companyName, sector: action.stock.sector};
-      return {
-        ...state,
-        stockList: [ ...state.stockList, newUserStock]
-      }
     default:
       return state
     }

@@ -16,7 +16,7 @@ class StockList extends Component {
 };
 
 const mapStateToProps = (state) => {
-  return { stockList: state.stocks.stockList };
+  return { stockList: state.users.stockList };
 };
  
 export default connect(mapStateToProps) (StockList);
