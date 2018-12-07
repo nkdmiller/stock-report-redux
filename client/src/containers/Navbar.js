@@ -9,40 +9,27 @@ import {
   NavLink
 } from 'react-router-dom'
 import { connect } from 'react-redux';
-const LoginLink = () => 		 
-		    <NavLink
-		      to='/login'
-		      exact
-		      className = "link"
-		    >Login</NavLink>;
-const SignupLink = () =>
-		    <NavLink
-		      to='/signup'
-		      exact
-		      className = "link"
-		    >Signup</NavLink>;
-const LogoutLink = () =>
-		    <NavLink
-		      to='/'
-		      exact
-
-		    >Logout</NavLink>;
-const HomeLink = () =>
-		    <NavLink
-		      to='/'
-		      exact
-		      className = "link"
-		    >Home</NavLink>;		
+import LoginLink from '../components/LoginLink'
+import LogoutLink from '../components/LogoutLink'
+import SignupLink from '../components/SignupLink'
+import HomeLink from '../components/HomeLink'
+		
 class Navbar extends Component {
-	state = { user: "Nate" };
   render() {
+  	let signup =
+  		<Route exact path="/" component={SignupLink} />
+  	let login =  
+		<Route exact path="/" component={LoginLink} />
+	if (this.props.currentUser){
+		login = <Route exact path="/" component={LogoutLink} />
+		signup = ""
+	}
     return (
     	<>
     		<h1>Welcome {this.props.currentUser}!</h1>
-    		<HomeLink/>
-		    <Route path="/user" component={LogoutLink} />
-		    <Route exact path="/" component={SignupLink} />
-		    <Route exact path="/" component={LoginLink} />
+    		<Route exact path="/login" component={HomeLink}/>
+		    {login}
+		    {signup}
 		</>
 
     );

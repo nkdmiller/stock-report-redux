@@ -1,4 +1,7 @@
-
+body {
+   background-color: silver;
+   font-family: 'Playfair Display', serif;
+}
 .stock-table {
   margin-left:25%; 
   margin-right:25%;
@@ -10,8 +13,32 @@
   margin: 0 6px 6px;
   background: blue;
   color: white;
-  top: 0;
-  left: 0;
-  position: fixed;
 }
 
+.button-green{
+  background-color: silver; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+.big-button-green{
+  background-color: silver; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    font-size: 1em;
+}
+.button-green:hover{
+    background-color: #4CAF50;
+    color: white;
+}
+.big-button-green:hover{
+    background-color: #4CAF50;
+    color: white;
+}
+.App{
+  margin-left:25%; 
+  margin-right:25%;
+  padding: 10px;
+  border: 5px;
+  background-color: lightgray;
+  border-style: groove;
+}
