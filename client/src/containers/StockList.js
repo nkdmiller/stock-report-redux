@@ -8,9 +8,16 @@ class StockList extends Component {
 
   render() {
     return(
-      <div>
+      <table>
+      	<th>
+      	<td>Company</td>
+      	<td>Symbol</td>
+      	<td>Price</td>
+      	<td>Change</td>
+      	<td>Sector</td>
         {this.renderStocks()}
-      </div>
+        </th>
+      </table>
     );
   }
 };

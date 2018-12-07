@@ -4,8 +4,13 @@ const Stock = props => {
 	let renderEnd = ""
 
   return (
-
-    <>{props.stock.symbol}</>
+  	<tr>
+  	<td>{props.stock.companyName}</td>
+    <td>{props.stock.symbol}</td>
+    <td>{props.stock.price}</td>
+    <td>{props.stock.change}</td>
+    <td>{props.stock.sector}</td>
+    </tr>
 
   );
 };
