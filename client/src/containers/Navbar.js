@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import '../Styling.css'
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
@@ -13,12 +13,13 @@ const LoginLink = () =>
 		    <NavLink
 		      to='/login'
 		      exact
+		      className = "link"
 		    >Login</NavLink>;
 const SignupLink = () =>
 		    <NavLink
 		      to='/signup'
 		      exact
-
+		      className = "link"
 		    >Signup</NavLink>;
 const LogoutLink = () =>
 		    <NavLink
@@ -30,6 +31,7 @@ const HomeLink = () =>
 		    <NavLink
 		      to='/'
 		      exact
+		      className = "link"
 		    >Home</NavLink>;		
 class Navbar extends Component {
 	state = { user: "Nate" };

@@ -5,17 +5,23 @@ import { addUserStock } from '../actions/addUserStock'
 import { createStock } from '../actions/createStock'
 import StockForm  from './StockForm'
 import StockList  from './StockList'
-
+import StockShow from '../components/StockShow'
 class Portfolio extends Component {
 
 onHandleClick = event =>{
 	this.props.createStock()
 }
+
+
   render() {
+  	let stockShow = ""
+	if (this.props.stock){
+		stockShow = <StockShow props={{ stock: this.props.stock}} />
+	}
     return (
       <div className="Portfolio">
       <StockForm/>
-        
+        {stockShow}
         <button onClick={this.onHandleClick} value={this.props.stock.symbol}>Add Stock to Portfolio</button>
       <StockList/>
       </div>
