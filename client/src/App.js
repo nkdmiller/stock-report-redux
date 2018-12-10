@@ -14,6 +14,7 @@ import {
 } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { fetchUser } from './actions/fetchUser'
+
 class App extends Component {
   componentDidMount() {
     this.props.fetchUser()
@@ -28,7 +29,9 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Navbar/>
+            
             <Dashboard/>
+
             {portfolio}
           </React.Fragment>
         </Router>

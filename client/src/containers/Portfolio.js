@@ -6,6 +6,7 @@ import { createStock } from '../actions/createStock'
 import StockForm  from './StockForm'
 import StockList  from './StockList'
 import StockShow from '../components/StockShow'
+import ErrorDiv from '../components/ErrorDiv'
 class Portfolio extends Component {
 
 onHandleClick = event =>{
@@ -21,8 +22,9 @@ onHandleClick = event =>{
     return (
       <div className="Portfolio">
       <StockForm/>
+      	<ErrorDiv/>
         {stockShow}
-        <button onClick={this.onHandleClick} value={this.props.stock.symbol}>Add Stock to Portfolio</button>
+        <button className = "button-green" onClick={this.onHandleClick} value={this.props.stock.symbol}>Add Stock to Portfolio</button>
       <StockList/>
       </div>
     );

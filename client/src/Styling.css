@@ -42,3 +42,6 @@ body {
   background-color: lightgray;
   border-style: groove;
 }
+#error-handler{
+  color: red;
+}
