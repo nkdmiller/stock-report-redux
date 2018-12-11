@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchStocks } from '../actions/fetchStocks'
 import { addUserStock } from '../actions/addUserStock'
 import { createStock } from '../actions/createStock'
+import { updateStocks} from '../actions/updateStocks'
 import StockForm  from './StockForm'
 import StockList  from './StockList'
 import StockShow from '../components/StockShow'
@@ -12,8 +13,12 @@ class Portfolio extends Component {
 onHandleClick = event =>{
 	this.props.createStock()
 }
-
-
+componentDidMount() {
+  this.interval = setInterval(() => this.props.updateStocks(), 5000);
+}
+componentWillUnmount() {
+  clearInterval(this.interval);
+}
   render() {
   	let stockShow = ""
 	if (this.props.stock){
@@ -32,7 +37,7 @@ onHandleClick = event =>{
 }
 
 function mapDispatchToProps(dispatch){
-  return { fetchStocks: () => dispatch(fetchStocks()), addUserStock: (sym) => dispatch(addUserStock(sym)), createStock: () => dispatch(createStock()) }
+  return { fetchStocks: () => dispatch(fetchStocks()), addUserStock: (sym) => dispatch(addUserStock(sym)), createStock: () => dispatch(createStock()), updateStocks: () => dispatch(updateStocks()) }
 }
 
 const mapStateToProps = (state) => {

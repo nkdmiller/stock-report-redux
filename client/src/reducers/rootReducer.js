@@ -30,6 +30,18 @@ function usersReducer(state = {loading: false, currentUser: null, userId: null, 
         ...state,
         stockList: [ ...state.stockList, newUserStock]
       }
+    case 'UPDATE_STOCK_INFO':
+      let updatedStockList = state.stockList;
+
+      updatedStockList.forEach(function(stock, index, stockList){
+        if (stock.symbol.toUpperCase() === action.stock.quote.symbol){
+          stockList[index].price = action.stock.quote.latestPrice
+          stockList[index].change = action.stock.quote.change
+          stockList[index].companyName = action.stock.quote.companyName
+          stockList[index].sector = action.stock.quote.sector
+        }
+      })
+      return {...state, updatedStockList}
     default:
       return state
   }
@@ -42,7 +54,6 @@ function stocksReducer(state = {loading: false, currentUser: null, stock: "", ta
     case 'ADD_STOCKS':
       return {...state, loading: false, targetStock: action.sym}
     case 'ADD_STOCK_INFO':
-       
       let newStock = { symbol: action.stocks.quote.symbol, price: action.stocks.quote.latestPrice, change: action.stocks.quote.change, companyName: action.stocks.quote.companyName, sector: action.stocks.quote.sector}
       return {...state, loading: false, stock: newStock}
     default:
