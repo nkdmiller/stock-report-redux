@@ -15,7 +15,7 @@ onHandleClick = event =>{
 	this.props.createStock()
 }
 componentDidMount() {
-  this.interval = setInterval(() => this.props.updateStocks(), 5000);
+  this.interval = setInterval(() => this.props.updateStocks(), 50000);
  }
 componentWillUnmount() {
   clearInterval(this.interval);

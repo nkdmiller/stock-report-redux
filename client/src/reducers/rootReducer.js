@@ -15,7 +15,6 @@ function usersReducer(state = {loading: false, currentUser: null, userId: null, 
     case 'LOADING_USER':
       return {...state, loading: true}
     case 'FETCH_USER':
-      debugger
       return { ...state,
         currentUser: action.user.name, userId: action.user.id, stockList: action.user.stocks
       }

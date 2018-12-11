@@ -8,10 +8,8 @@ class StocksController < ApplicationController
   end
   def update
   	@stock = Stock.find(params[:id])
-  	puts params
-  	puts @stock.price
   	@stock.update(symbol: params[:stock][:symbol], price: params[:stock][:price], companyName: params[:stock][:companyName], sector: params[:stock][:sector], change: params[:stock][:change])
-  	puts @stock.price
+  	render json: @stock
   end
   def destroy
   	Stock.delete(params[:id])

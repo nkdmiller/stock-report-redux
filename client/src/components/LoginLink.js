@@ -9,7 +9,7 @@ import {
 const LoginLink = props => {
 	return(
 		    <NavLink
-		      to='/login'
+		      to='/session/new'
 		      exact
 		      className = "link"
 		    >Login</NavLink>

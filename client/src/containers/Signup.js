@@ -52,9 +52,12 @@ class Signup extends Component {
         <h1 id="signup-head">Sign Up</h1>
         <div className="signup-form-body">
           <form onSubmit={this.onHandleSubmit} onKeyPress={this.handleKeyPress} id="signup-form">
-            <input id="name" name="name" placeholder="Username" value={this.state.user.name} onChange={this.onHandleChange} />
-            <input id="password" type="password" name="password" placeholder="Password" value={this.state.user.password} onChange={this.onHandleChange} />
-            <input id="email" name="email" placeholder="Email" value={this.state.user.email} onChange={this.onHandleChange} />
+            <input required id="name" name="name" placeholder="Username" value={this.state.user.name} onChange={this.onHandleChange} />
+            <br></br>
+            <input required id="password" type="password" name="password" placeholder="Password" value={this.state.user.password} onChange={this.onHandleChange} />
+            <br></br>
+            <input required id="email" name="email" placeholder="Email" value={this.state.user.email} onChange={this.onHandleChange} />
+            <br></br>
             <button>Submit</button>
           </form>
         </div>

@@ -8,11 +8,18 @@ body {
   width: 50%;
 }
 .link{
-  width: 100px;
+  width: 75px;
   padding: 12px;
   margin: 0 6px 6px;
   background: blue;
   color: white;
+}
+.logout{
+  width: 75px;
+  padding: 12px;
+  margin: 0 6px 6px; 
+  background: red;
+  color: white;  
 }
 
 .button-green{
@@ -35,6 +42,7 @@ body {
     color: white;
 }
 .App{
+  margin-top:5%;
   margin-left:25%; 
   margin-right:25%;
   padding: 10px;

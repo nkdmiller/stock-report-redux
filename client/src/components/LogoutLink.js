@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 const LogoutLink = props => {
 	return(
 		    <button
-		      className = "link"
+		      className = "logout"
 		      onClick={props.logoutUser}
 		    >Logout</button>
 		   )

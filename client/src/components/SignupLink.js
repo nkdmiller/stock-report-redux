@@ -9,7 +9,7 @@ import {
 const SignupLink = props => {
 	return(
 		    <NavLink
-		      to='/signup'
+		      to='/user/new'
 		      exact
 		      className = "link"
 		    >Signup</NavLink>
