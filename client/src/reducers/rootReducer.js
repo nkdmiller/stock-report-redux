@@ -43,9 +43,10 @@ function usersReducer(state = {loading: false, currentUser: null, userId: null, 
       })
       return {...state, stockList}
     case 'DELETE_USERS_STOCK':
-      debugger
       var stockList = state.stockList.filter(stock => stock.id !== action.id);
       return { ...state, stockList}
+    case 'LOGOUT_USER':
+      return {...state, currentUser: null, userId: null, stockList: []}
     default:
       return state
   }

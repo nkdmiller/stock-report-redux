@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-  NavLink
-} from 'react-router-dom'
+import { logoutUser } from '../actions/logoutUser'
+import { connect } from 'react-redux';
 const LogoutLink = props => {
 	return(
-		    <NavLink
-		      to='/'
-		      exact
+		    <button
 		      className = "link"
-		    >Logout</NavLink>
+		      onClick={props.logoutUser}
+		    >Logout</button>
 		   )
 }
-export default LogoutLink;
+function mapDispatchToProps(dispatch){
+  return {logoutUser: () => dispatch(logoutUser())}
+}
+
+export default connect(null, mapDispatchToProps)(LogoutLink)
