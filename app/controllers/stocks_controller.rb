@@ -13,4 +13,8 @@ class StocksController < ApplicationController
   	@stock.update(symbol: params[:stock][:symbol], price: params[:stock][:price], companyName: params[:stock][:companyName], sector: params[:stock][:sector], change: params[:stock][:change])
   	puts @stock.price
   end
+  def destroy
+  	Stock.delete(params[:id])
+  	render json: params[:id]
+  end
 end

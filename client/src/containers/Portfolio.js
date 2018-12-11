@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchStocks } from '../actions/fetchStocks'
 import { addUserStock } from '../actions/addUserStock'
 import { createStock } from '../actions/createStock'
+
 import { updateStocks} from '../actions/updateStocks'
 import StockForm  from './StockForm'
 import StockList  from './StockList'
@@ -15,7 +16,7 @@ onHandleClick = event =>{
 }
 componentDidMount() {
   this.interval = setInterval(() => this.props.updateStocks(), 5000);
-}
+ }
 componentWillUnmount() {
   clearInterval(this.interval);
 }
