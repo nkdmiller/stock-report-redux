@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     let portfolio = ""
     if (this.props.currentUser){
-      portfolio = <Portfolio/>
+      portfolio = <Route path="/portfolio" component={Portfolio}/>
     }
     return (
       <div className="App">

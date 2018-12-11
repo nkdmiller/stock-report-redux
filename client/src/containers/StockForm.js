@@ -34,7 +34,7 @@ class StockForm extends Component {
         <h1>Search for Stock by Symbol</h1>
         <div className="stock-form-body">
           <form onSubmit={this.onHandleSubmit} onKeyPress={this.handleKeyPress} id="signup-form">
-            <input id="sym" name="sym" placeholder="(..appl, snap, fb...)" value={this.state.sym} onChange={this.onHandleChange} />
+            <input id="sym" name="sym" placeholder="(msft, snap, fb...)" value={this.state.sym} onChange={this.onHandleChange} />
             <button>Submit</button>
           </form>
         </div>

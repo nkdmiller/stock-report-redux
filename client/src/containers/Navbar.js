@@ -13,24 +13,29 @@ import LoginLink from '../components/LoginLink'
 import LogoutLink from '../components/LogoutLink'
 import SignupLink from '../components/SignupLink'
 import HomeLink from '../components/HomeLink'
-		
+import PortfolioLink from '../components/PortfolioLink'
 class Navbar extends Component {
   render() {
-  	let signup =
-  		<Route exact path="/" component={SignupLink} />
-  	let login =  
-		<Route exact path="/" component={LoginLink} />
+  let portfolio =
+    null;
+	let signup =
+		<Route exact path="/" component={SignupLink} />
+	let login =  
+	  <Route exact path="/" component={LoginLink} />
 	if (this.props.currentUser){
 		login = <Route exact path="/" component={LogoutLink} />
 		signup = ""
+    portfolio = <PortfolioLink/>
 	}
     return (
     	<>
     		<h1>Welcome {this.props.currentUser}!</h1>
     		<Route exact path="/login" component={HomeLink}/>
         <Route exact path="/signup" component={HomeLink}/>
+        <Route exact path="/portfolio" component={HomeLink}/>
 		    {login}
 		    {signup}
+        {portfolio}
 		</>
 
     );
