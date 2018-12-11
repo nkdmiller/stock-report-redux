@@ -29,7 +29,6 @@ class App extends Component {
         <Router>
           <React.Fragment>
             <Navbar/>
-            
             <Dashboard/>
 
             {portfolio}

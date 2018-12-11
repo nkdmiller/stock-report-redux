@@ -28,6 +28,7 @@ class Navbar extends Component {
     	<>
     		<h1>Welcome {this.props.currentUser}!</h1>
     		<Route exact path="/login" component={HomeLink}/>
+        <Route exact path="/signup" component={HomeLink}/>
 		    {login}
 		    {signup}
 		</>
