@@ -1,5 +1,4 @@
 export function createStock() {
-	console.log('C')
 	return (dispatch, getState) => {
 	dispatch({ type: 'LOADING_STOCKS' });
 	  fetch('/stock/new', {
@@ -11,8 +10,6 @@ export function createStock() {
 	  }) 
 	  .then(response => response.json())
       .then(stock =>{
-      	console.log('D')
       	dispatch({ type: 'CREATE_USER_STOCK', stock})});
     }
-	console.log('E')
 }
