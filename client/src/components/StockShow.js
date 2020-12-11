@@ -1,6 +1,5 @@
 import React from 'react';
 const StockShow = props => {
-  debugger
   return (
     <table class ="stock-table">
     <thead>
