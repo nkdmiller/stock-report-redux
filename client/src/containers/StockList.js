@@ -9,7 +9,7 @@ class StockList extends Component {
 
   render() {
     return(
-      <table class = "stock-table">
+      <table className = "stock-table">
       	<thead>
       	<tr>
       	<th>Company</th>

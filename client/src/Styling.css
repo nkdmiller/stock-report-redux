@@ -1,6 +1,13 @@
 body {
-   background-color: silver;
+   background-image: url(images/background.jpg);
    font-family: 'Playfair Display', serif;
+   background-repeat: no-repeat;
+
+     /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+
 }
 .stock-table {
   margin-left:25%; 
@@ -10,9 +17,23 @@ body {
 .link{
   width: 75px;
   padding: 12px;
-  margin: 0 6px 6px;
   background: blue;
   color: white;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
 }
 .logout{
   width: 75px;
@@ -47,9 +68,8 @@ body {
   margin-right:25%;
   padding: 10px;
   border: 5px;
-  background-color: lightgray;
-  border-style: solid;
-  border-width: medium;
+  background-color: #bdd4e7;
+  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);  
 }
 
 .navbar{

@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
   NavLink
 } from 'react-router-dom'
 const LoginLink = props => {

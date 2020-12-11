@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { logoutUser } from '../actions/logoutUser'
 import { connect } from 'react-redux';
 const LogoutLink = props => {

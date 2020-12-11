@@ -1,11 +1,6 @@
-import React, { Component } from 'react';
-import { logoutUser } from '../actions/logoutUser'
+import React from 'react';
 import { connect } from 'react-redux';
 import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
   NavLink
 } from 'react-router-dom'
 

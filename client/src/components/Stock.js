@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { deleteStock } from '../actions/deleteStock'
 import { connect } from 'react-redux';
 const Stock = props => {
-	let renderHead = ""
-	let renderEnd = ""
 
   return (
   	<tr>
