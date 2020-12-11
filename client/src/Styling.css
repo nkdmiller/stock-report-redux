@@ -48,8 +48,14 @@ body {
   padding: 10px;
   border: 5px;
   background-color: lightgray;
-  border-style: groove;
+  border-style: solid;
+  border-width: medium;
 }
+
+.navbar{
+  margin: 20px;
+}
+
 #error-handler{
   color: red;
 }

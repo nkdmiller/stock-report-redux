@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import '../Styling.css'
-import ReactDOM from 'react-dom';
 import {
-  BrowserRouter as Router,
   Route,
-  Link,
-  Redirect,
-  NavLink
 } from 'react-router-dom'
 import { connect } from 'react-redux';
 import LoginLink from '../components/LoginLink'
@@ -19,25 +14,27 @@ class Navbar extends Component {
   let portfolio =
     null;
 	let signup =
-		<Route exact path="/" component={SignupLink} />
+		<Route exact path="/" component={SignupLink} />;
 	let login =  
-	  <Route exact path="/" component={LoginLink} />
+    <Route exact path="/" component={LoginLink} />;
+  let welcomeText = 'Welcome to Stock Report!';
 	if (this.props.currentUser){
-		login = <Route exact path="/" component={LogoutLink} />
-		signup = ""
-    portfolio = <PortfolioLink/>
+		login = <Route exact path="/" component={LogoutLink} />;
+		signup = "";
+    portfolio = <PortfolioLink />;
+    welcomeText = 'Welcome ' + this.props.currentUser + "!";
 	}
     return (
-    	<>
-    		<h1>Welcome {this.props.currentUser}!</h1>
-    		<Route exact path="/session/new" component={HomeLink}/>
-        <Route exact path="/user/new" component={HomeLink}/>
-        <Route exact path="/portfolio" component={HomeLink}/>
-		    {login}
-		    {signup}
-        {portfolio}
-		</>
-
+    	<div className='navbar'>
+          <h1>{welcomeText}</h1>
+          <Route exact path="/session/new" component={HomeLink} />
+          <Route exact path="/user/new" component={HomeLink} />
+          <Route exact path="/portfolio" component={HomeLink} />
+          {login}
+          {signup}
+          {portfolio}
+          <br/>
+      </div>
     );
   }
 }
