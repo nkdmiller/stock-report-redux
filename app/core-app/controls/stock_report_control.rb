@@ -1,5 +1,5 @@
 require_relative '../boundaries/database_boundary.rb'
-module StockReportInteractor
+module StockReportControl
   include DatabaseBoundary
   #Use Cases
 

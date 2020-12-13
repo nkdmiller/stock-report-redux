@@ -1,5 +1,5 @@
 require_relative '../core-app/boundaries/users_boundary.rb'
-require_relative '../core-app/interactors/stock_report_interactor.rb'
+require_relative '../core-app/controls/stock_report_control.rb'
 require_relative '../core-app/request-models/request_models.rb'
 class UsersController < ApplicationController 
   skip_before_action :verify_authenticity_token

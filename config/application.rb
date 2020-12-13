@@ -17,8 +17,8 @@ module StockReportRedux
     # the framework and any gems in your application.
     config.autoload_paths << "#{Rails.root}/core-app/boundaries"
     config.eager_load_paths << "#{Rails.root}/core-app/boundaries"
-    config.autoload_paths << "#{Rails.root}/core-app/interactors"
-    config.eager_load_paths << "#{Rails.root}/core-app/interactors"
+    config.autoload_paths << "#{Rails.root}/core-app/controls"
+    config.eager_load_paths << "#{Rails.root}/core-app/controls"
     config.autoload_paths << "#{Rails.root}/core-app/request-models"
     config.eager_load_paths << "#{Rails.root}/core-app/request-models"
     config.autoload_paths << "#{Rails.root}/core-app/response-models"

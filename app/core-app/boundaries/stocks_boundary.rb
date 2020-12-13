@@ -1,18 +1,18 @@
-require_relative '../interactors/stock_report_interactor.rb'
+require_relative '../controls/stock_report_control.rb'
 module StocksBoundary
-    include StockReportInteractor
+    include StockReportControl
     def self.createStock(stock_request)
-        @stockResponse = StockReportInteractor.createStock(stock_request)
+        @stockResponse = StockReportControl.createStock(stock_request)
         return @stockResponse
     end
 
     def self.updateStock(stock_request)
-        @stockResponse = StockReportInteractor.updateStock(stock_request)
+        @stockResponse = StockReportControl.updateStock(stock_request)
         return @stockResponse
     end
 
     def self.deleteStock(stock_id)
-        @deleted_id = StockReportInteractor.deleteStock(stock_id)
+        @deleted_id = StockReportControl.deleteStock(stock_id)
         return @deleted_id
     end
 end
