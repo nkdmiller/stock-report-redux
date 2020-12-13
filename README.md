@@ -4,7 +4,22 @@ Stock Report is a react application that allows users to search for stocks and s
 
 ## How to start Stock Report
 
-To run, please download the zip file and extract to a directory you can access. Then in your terminal cd to the root directory. Run "bundle install" and then "rake start". It should open your browser automatically, but if not navigate to http://localhost:3000/ in your preferred browser.
+To run, please download the zip file and extract to a directory you can access.
+go to root directory
+
+--Install Ruby Gems and Rails
+bundle install OR bundle exec install
+
+--Create local SQLite DB
+bundle exec rake db:migrate
+
+--Install node_modules
+npm install
+cd client
+npm install
+
+--Start Program
+rake start
 
 ## Contributions
 
