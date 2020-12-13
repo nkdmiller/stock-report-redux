@@ -14,11 +14,10 @@ body {
   margin-right:25%;
   width: 50%;
 }
+
 .link{
   width: 75px;
   padding: 12px;
-  background: blue;
-  color: white;
   font-family: inherit;
   font-size: inherit;
   color: inherit;
@@ -31,37 +30,49 @@ body {
   font-weight: 700;
   outline: none;
   position: relative;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
   transition: all 0.3s;
 }
+
 .logout{
   width: 75px;
   padding: 12px;
-  margin: 0 6px 6px; 
-  background: red;
-  color: white;  
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  border: none;
+  background: none;
+  text-decoration:underline;
 }
 
-.button-green{
-  background-color: silver; 
-    color: black; 
-    border: 2px solid #4CAF50;
+.addstock{
+  width: 325px;
+  padding: 12px;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  border: none;
+  background: none;
+  text-decoration:underline;  
 }
-.big-button-green{
-  background-color: silver; 
-    color: black; 
-    border: 2px solid #4CAF50;
-    font-size: 1em;
-}
-.button-green:hover{
-    background-color: #4CAF50;
-    color: white;
-}
-.big-button-green:hover{
-    background-color: #4CAF50;
-    color: white;
-}
+
 .App{
   margin-top:5%;
   margin-left:25%; 

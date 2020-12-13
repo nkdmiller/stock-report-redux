@@ -8,7 +8,7 @@ export function updateStocks() {
      	.then(stock => dispatch({ type: 'UPDATE_STOCK_INFO', stock }))
      })
     getState().users.stockList.forEach(function(stock){
-    	fetch("/stock/"+stock.id+"/edit", {
+    	fetch("/stock/"+stock.stock_id+"/edit", {
 	    method: 'PATCH',
 	    headers: {
 	      Accept: 'application/json',

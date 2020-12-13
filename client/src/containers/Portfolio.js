@@ -30,7 +30,7 @@ componentWillUnmount() {
       <StockForm/>
       	<ErrorDiv/>
         {stockShow}
-        <button className = "button-green" onClick={this.onHandleClick} value={this.props.stock.symbol}>Add Stock to Portfolio</button>
+        <button className = "addstock" onClick={this.onHandleClick} value={this.props.stock.symbol}>Add Stock to Portfolio</button>
       <StockList/>
       </div>
     );

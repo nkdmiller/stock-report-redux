@@ -15,7 +15,6 @@ class StockList extends Component {
       	<th>Company</th>
       	<th>Symbol</th>
       	<th>Price</th>
-      	<th>Change</th>
       	<th>Sector</th>
       	</tr>
       	</thead>

@@ -1,20 +1,23 @@
-require_relative '../core-app/boundaries/stocks_gateway.rb'
+require_relative '../core-app/boundaries/stocks_boundary.rb'
+require_relative '../core-app/request-models/request_models.rb'
 class StocksController < ApplicationController 
   skip_before_action :verify_authenticity_token
-  include StocksGateway
+  include StocksBoundary
+  include RequestModels
   def new
-   @stock = Stock.new(symbol: params[:stock][:symbol], price: params[:stock][:price], companyName: params[:stock][:companyName], sector: params[:stock][:sector], change: params[:stock][:change])
-   @stock.user_id = session[:user_id]
-   @stock.save
-   render json: @stock
+    @stock = RequestModels::StockRequest.new(params[:stock][:symbol], params[:stock][:price], params[:stock][:company_name], params[:stock][:sector], params[:stock][:change], session[:user_id])
+    puts @stock
+    @stockResponse = StocksBoundary.createStock(@stock)
+    render json: @stockResponse
   end
   def update
-  	@stock = Stock.find(params[:id])
-  	@stock.update(symbol: params[:stock][:symbol], price: params[:stock][:price], companyName: params[:stock][:companyName], sector: params[:stock][:sector], change: params[:stock][:change])
-  	render json: @stock
+  	@stock = RequestModels::StockRequest.new(params[:stock][:symbol], params[:stock][:price], params[:stock][:company_name], params[:stock][:sector], params[:stock][:change], session[:user_id], params[:id])
+  	@stockResponse = StocksBoundary.updateStock(@stock)
+  	render json: @stockResponse
   end
   def destroy
-  	Stock.delete(params[:id])
-  	render json: params[:id]
+    @deleted_id = StocksBoundary.deleteStock(params[:id])
+    puts("deleted" + @deleted_id)
+  	render json: @deleted_id
   end
 end

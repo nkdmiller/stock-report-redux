@@ -5,12 +5,11 @@ const Stock = props => {
 
   return (
   	<tr>
-  	<td>{props.stock.companyName}</td>
+  	<td>{props.stock.company_name}</td>
     <td>{props.stock.symbol}</td>
     <td>{props.stock.price}</td>
-    <td>{props.stock.change}</td>
     <td>{props.stock.sector}</td>
-    <td><button className= "button-red" onClick={props.deleteStock.bind(null, props.stock.id)}>Remove</button></td>
+    <td><button className= "button-red" onClick={props.deleteStock.bind(null, props.stock.stock_id)}>Remove</button></td>
     </tr>
 
   );

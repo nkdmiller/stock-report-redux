@@ -1,7 +1,6 @@
 export function logoutUser() {
 
 	return (dispatch, getState) => {
-	debugger
 	dispatch({ type: 'LOADING_USER' });
 	  fetch("/session/delete", {
 	    method: 'GET',

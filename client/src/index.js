@@ -7,8 +7,11 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/rootReducer'
 import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-let store = createStore(rootReducer, applyMiddleware(thunk))
+let store = createStore(rootReducer, composeWithDevTools(
+  applyMiddleware(thunk),
+));
 window.store = store;
 ReactDOM.render(
   <Provider store={store}>
